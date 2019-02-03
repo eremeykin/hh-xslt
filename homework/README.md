@@ -9,3 +9,7 @@
    для генерации `xml` файла по скачанной старнице.
 3) Запустить `xsltproc --output homework/pulls-result.html homework/make-html.xsl homework/pulls.xml`
    для генерации `html` страницы по сгенерированному `xml`.
+
+```bash
+for f in homework/pull#*; do xsltproc --output  "${f%*.html}.xml" homework/make-html-single.xsl $f; done
+```
